@@ -1,0 +1,35 @@
+<style type="text/css">
+    body,
+    html,
+    .body {
+        background: #f3f3f3 !important;
+    }
+</style>
+
+<container>
+
+    <spacer size="16"></spacer>
+
+    <row>
+        <columns>
+            <h1>MY THAI STAR</h1>
+            <p>Hi \{{ invitedGuest.email }}</p>
+            <p>\{{booking.email}} has invited you to an event on My Thai Star restaurant</p>
+
+            <callout class="secondary">
+                <row>
+                    <p>
+                        <strong>Booking Date:</strong> \{{ invitedGuest.booking.bookingDate }} <br />
+                        <a href="\{{ clientUrl }}/booking/acceptInvite/\{{ invitedGuest.guestToken }}">Accept
+                            invitation</a><br />
+                        <a href="\{{ clientUrl }}/booking/rejectInvite/\{{ invitedGuest.guestToken }}">Decline
+                            invitation</a><br />
+                    </p>
+                </row>
+            </callout>
+
+            <spacer size="16"></spacer>
+
+        </columns>
+    </row>
+</container>
