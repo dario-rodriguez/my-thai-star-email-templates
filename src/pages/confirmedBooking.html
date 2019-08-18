@@ -1,0 +1,43 @@
+<style type="text/css">
+    body,
+    html,
+    .body {
+        background: #f3f3f3 !important;
+    }
+</style>
+
+<container>
+
+    <spacer size="16"></spacer>
+
+    <row>
+        <columns>
+            <h1>MY THAI STAR</h1>
+            <p>Hi \{{ booking.email }}</p>
+            <p>Your booking has been confirmed.</p>
+
+            <callout class="secondary">
+                <row>
+                    <p>
+                        <strong>Host:</strong> \{{ booking.name }} &lt;\{{ booking.email }}&gt; <br />
+                        <strong>Booking CODE:</strong> \{{ booking.bookingToken }} <br />
+                        <strong>Booking Date:</strong> \{{ booking.bookingDate }} <br /> \{{#if booking.invitedGuest}}
+                        <strong>Guest list:</strong>
+                        <ul>
+                            \{{#each booking.invitedGuest}}
+                            <li>\{{ this.email }}</li>
+                            \{{/each}}
+                        </ul>
+                        \{{/if}}
+                    </p>
+                </row>
+            </callout>
+
+            <spacer size="16"></spacer>
+
+            <row>
+                <a href="\{{ clientUrl }}/booking/cancel/\{{ booking.bookingToken }}">Cancelation link</a>
+            </row>
+        </columns>
+    </row>
+</container>
