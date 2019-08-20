@@ -1,0 +1,23 @@
+<style type="text/css">
+    body,
+    html,
+    .body {
+        background: #f3f3f3 !important;
+    }
+</style>
+
+<container>
+    <spacer size="16"></spacer>
+
+    <row>
+        <columns>
+            <h1>MY THAI STAR</h1>
+            <p>Hi \{{ invitedGuest.email }}</p>
+            <p>
+                You have declined the invitation from \{{ booking.name }} &lt;\{{ booking.email }}&gt; for the event on \{{ formatDate booking.date }}
+            </p>
+
+            <spacer size="16"></spacer>
+        </columns>
+    </row>
+</container>

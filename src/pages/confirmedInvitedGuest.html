@@ -7,7 +7,6 @@
 </style>
 
 <container>
-
     <spacer size="16"></spacer>
 
     <row>
@@ -19,9 +18,10 @@
             <callout class="secondary">
                 <row>
                     <p>
-                        <strong>Host:</strong> \{{ invitedGuest.booking.name }} &lt;\{{ invitedGuest.booking.email }}&gt; <br />
-                        <strong>Booking CODE:</strong> \{{ invitedGuest.booking.bookingToken }} <br />
-                        <strong>Booking Date:</strong> \{{ invitedGuest.booking.bookingDate }} <br />
+                        <strong>Host:</strong> \{{ booking.name }} &lt;\{{ booking.email }}&gt; <br />
+                        <strong>Booking CODE:</strong> \{{ invitedGuest.guestToken }} <br />
+                        <strong>Booking Date:</strong> \{{ formatDate booking.bookingDate }}
+                        <br />
                     </p>
                 </row>
             </callout>
@@ -29,8 +29,11 @@
             <spacer size="16"></spacer>
 
             <row>
-                <a href="\{{ clientUrl }}/booking/rejectInvite/\{{ invitedGuest.guestToken }}">Cancelation link</a>
-            </row>
-        </columns>
-    </row>
+                <a href="\{{ clientUrl }}/booking/rejectInvite/\{{
+            invitedGuest.guestToken
+          }}">Cancelation link</a
+        >
+      </row>
+    </columns>
+  </row>
 </container>

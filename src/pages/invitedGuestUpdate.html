@@ -1,0 +1,23 @@
+<style type="text/css">
+    body,
+    html,
+    .body {
+        background: #f3f3f3 !important;
+    }
+</style>
+
+<container>
+    <spacer size="16"></spacer>
+
+    <row>
+        <columns>
+            <h1>MY THAI STAR</h1>
+            <p>Hi \{{ booking.email }}</p>
+            <p>
+                \{{ invitedGuest.email }} has \{{bool2word invitedGuest.accepted }} your invitation for the event on \{{ formatDate booking.bookingDate }}
+            </p>
+
+            <spacer size="16"></spacer>
+        </columns>
+    </row>
+</container>

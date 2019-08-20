@@ -21,7 +21,7 @@
                     <p>
                         <strong>Host:</strong> \{{ booking.name }} &lt;\{{ booking.email }}&gt; <br />
                         <strong>Booking CODE:</strong> \{{ booking.bookingToken }} <br />
-                        <strong>Booking Date:</strong> \{{ booking.bookingDate }} <br /> \{{#if booking.invitedGuest}}
+                        <strong>Booking Date:</strong> \{{ formatDate booking.bookingDate }} <br /> \{{#if booking.invitedGuest}}
                         <strong>Guest list:</strong>
                         <ul>
                             \{{#each booking.invitedGuest}}
