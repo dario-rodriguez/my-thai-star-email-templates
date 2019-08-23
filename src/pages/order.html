@@ -7,74 +7,44 @@
 </style>
 
 <container>
-
     <spacer size="16"></spacer>
 
     <row>
         <columns>
-            <h1>Thanks for your order.</h1>
-            <p>Thanks for shopping with us! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad earum ducimus, non, eveniet neque dolores voluptas architecto sed, voluptatibus aut dolorem odio. Cupiditate a recusandae, illum cum voluptatum modi
-                nostrum.</p>
+            <h1>MY THAI STAR</h1>
+            <p>Hi \{{ booking.email }}</p>
+            <p>Your order have been registered.</p>
+            <p><strong>Price: </strong>\{{ price }}</p>
+
+            \{{#if order.orderLines}}
+            <callout class="secondary">
+                <row>
+                    <ul>
+                        \{{#each order.orderLines}}
+                        <li>
+                            <strong>\{{ this.amount }}x \{{ this.dish.name }}:</strong> \{{ toNumber this.dish.price }}€ \{{#if this.ingredients}}
+                            <p>Comment: \{{ this.comment }}</p>
+                            <ul>
+                                \{{#each this.ingredients}}
+                                <li>
+                                    <strong>\{{ this.name }}</strong> \{{ toNumber this.price }}
+                                </li>
+                                \{{/each}}
+                            </ul>
+                            \{{/if}}
+                        </li>
+                        \{{/each}}
+                    </ul>
+                </row>
+            </callout>
+            \{{/if}}
 
             <spacer size="16"></spacer>
 
-            <callout class="secondary">
-                <row>
-                    <columns large="6">
-                        <p>
-                            <strong>Payment Method</strong><br /> Dubloons
-                        </p>
-                        <p>
-                            <strong>Email Address</strong><br /> thecapn@pirates.org
-                        </p>
-                        <p>
-                            <strong>Order ID</strong><br /> 239235983749636
-                        </p>
-                    </columns>
-                    <columns large="6">
-                        <p>
-                            <strong>Shipping Method</strong><br /> Boat (1&ndash;2 weeks)<br />
-                            <strong>Shipping Address</strong><br /> Captain Price<br /> 123 Maple Rd<br /> Campbell, CA 95112
-                        </p>
-                    </columns>
-                </row>
-            </callout>
-
-            <h4>Order Details</h4>
-
-            <table>
-                <tr>
-                    <th>Item</th>
-                    <th>#</th>
-                    <th>Price</th>
-                </tr>
-                <tr>
-                    <td>Ship's Cannon</td>
-                    <td>2</td>
-                    <td>$100</td>
-                </tr>
-                <tr>
-                    <td>Ship's Cannon</td>
-                    <td>2</td>
-                    <td>$100</td>
-                </tr>
-                <tr>
-                    <td>Ship's Cannon</td>
-                    <td>2</td>
-                    <td>$100</td>
-                </tr>
-                <tr>
-                    <td colspan="2"><b>Subtotal:</b></td>
-                    <td>$600</td>
-                </tr>
-            </table>
-
-            <hr />
-
-            <h4>What's Next?</h4>
-
-            <p>Our carrier raven will prepare your order for delivery. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi necessitatibus itaque debitis laudantium doloribus quasi nostrum distinctio suscipit, magni soluta eius animi voluptatem
-                qui velit eligendi quam praesentium provident culpa?</p>
-        </columns>
-    </row>
+            <row>
+                <a href="\{{ clientUrl }}/booking/cancelOrder/\{{ order.id }}">Cancelation link</a
+        >
+      </row>
+    </columns>
+  </row>
 </container>
